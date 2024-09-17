@@ -32,6 +32,21 @@ body {
   
 } */
 
+
+::-webkit-scrollbar{
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#2bbef9;
+}
+
+::-webkit-scrollbar-track {
+  background:transparent;
+}
+
+
 .headerwrapper .header .part2 .countryDrop{
   text-align: left; justify-content: flex-start !important;
 }
@@ -60,7 +75,7 @@ body {
   opacity: 0.7;
 }
 
-.header .headerSearch {
+.headerSearch {
 width: 60%;
 height: 60px;
 background-color: #f3f4f7;
@@ -68,7 +83,7 @@ padding: 10px;
 position: relative;
 }
 
-.header .headerSearch input{
+.headerSearch input{
  background: transparent !important;
  outline: none!important;
  font-size: 15px;
@@ -79,10 +94,10 @@ position: relative;
  padding: 0px 20px;
 }
 
-header .headerSearch button {
+.headerSearch button {
   position: absolute;
   top:10px;
-  right: 15px;
+  right: 10px;
   z-index: 100;
   min-width: 40px;
   height: 40px;
@@ -91,7 +106,7 @@ header .headerSearch button {
   color: black;
 }
 
-header .headerSearch button svg{
+.headerSearch button svg{
   font-size: 30px ;
 }
 
@@ -136,11 +151,21 @@ header .part3 .circle{
   height: 20px;
 }
 
+nav .navPart1 {
+  max-width: 20%; 
+  flex: 0 0 20%;
+}
+
+
+nav .navPart2 {
+  max-width: 80%; 
+  flex: 0 0 80%;
+}
 
 nav .allCatTab {
   background: #2bbef9;
   color: #fff;
-  padding: 15px 36px;
+  padding: 15px 15px;
   border-radius: 30px;
 }
 
@@ -171,4 +196,78 @@ color:#2bbef9 ;
 
 .navPart2 ul li a svg{
   font-size: 18px;
+}
+
+
+/* locationModal */
+
+.locationModal .MuiPaper-elevation{
+  padding: 25px;
+  position: relative;
+}
+
+.locationModal .countryList {
+  margin-bottom: 0px;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  
+}
+
+.locationModal .countryList li {
+  width: 100%;
+  list-style: none;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.locationModal .countryList li button {
+  width: 100%;
+  color: #000;
+  justify-content: flex-start;
+  text-align: left; /* Align text to the left */
+  border: none; /* Remove border */
+  background: none; /* Remove default button background */
+  margin: 10px 0px;
+  padding: 15px 20px;
+}
+
+.locationModal .countryList li button:hover {
+  background: #f3f4f7;
+}
+
+.locationModal .close_ {
+  border: none; /* Remove border */
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  min-width: 40px;
+  height: 40px; /* Set equal height and width to create a square */
+  background: none;
+  border-radius: 50%; /* Make the button circular */
+  display: flex; /* Flexbox for centering */
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+}
+
+.locationModal .close_:hover {
+  background: #f3f4f7;
+  border-radius: 50%; /* Keep it circular on hover */
+}
+
+.locationModal .close_ svg {
+  font-size: 20px;
+}
+
+.list-inline-item button {
+  border: none;
+  background: none;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  
+}
+
+.list-inline-item button:hover{
+  color:#007bff;
+  
 }
