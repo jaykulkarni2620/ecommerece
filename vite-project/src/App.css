@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" );
 
 * {
   margin: 0;
@@ -8,7 +10,9 @@
 body {
   font-family: "Lato", sans-serif !important;
   font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
 }
+
 
 .bg-color{
   background-color:#233A95;
@@ -32,6 +36,12 @@ body {
   
 } */
 
+.text-color{
+  color:#938c8c !important;
+}
+.text-sml{
+  font-size: 14px;
+}
 
 ::-webkit-scrollbar{
   width: 8px;
@@ -39,13 +49,16 @@ body {
 }
 
 ::-webkit-scrollbar-thumb{
-  background:#2bbef9;
+  background:#ffffff;
 }
 
 ::-webkit-scrollbar-track {
-  background:transparent;
+  background:transparent !important;
 }
 
+.headerwrapper{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
 
 .headerwrapper .header .part2 .countryDrop{
   text-align: left; justify-content: flex-start !important;
@@ -156,11 +169,193 @@ nav .navPart1 {
   flex: 0 0 20%;
 }
 
-
 nav .navPart2 {
   max-width: 80%; 
   flex: 0 0 80%;
 }
+
+nav .navPart1 .catWrapper{
+  position: relative;
+}
+
+/* nav .navPart1 .catWrapper .sidebarNav{
+ display: flex;
+ justify-content: start;
+ min-width: 270px;
+ width: 100%;
+ height: 400px;
+ background: #ffffff;
+ position: absolute;
+ top: 119%;
+ left: 0px;
+ border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li{
+  width: 100%;
+  list-style: none;
+  padding-top:15px;
+  padding-bottom:12px;
+  font-size: .8125rem;
+  color: #3e445a;
+ }
+
+.navPart1 .catWrapper .sidebarNav ul li button{
+  color:#000;
+  border: none;
+  background: #fff;
+ } */
+
+ nav .navPart1 .catWrapper .sidebarNav {
+  min-width: 270px;
+  width: 100%;
+  background: #ffffff;
+  position: absolute;
+  top: 119%;
+  left: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.2s ease;
+  visibility: hidden;
+  height: auto; /* Allow height to expand with content */
+  max-height: 500px; /* Set a max height for the sidebar */
+  overflow-y: auto; /* Add scroll if content exceeds max height */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  z-index: 100;
+}
+
+.sidebarNav ul li button:hover{
+background: #007bff;
+}
+
+nav .navPart1 .catWrapper .sidebarNav.open {
+  height: auto; /* Ensure height is auto when open */
+  opacity: 1;
+  visibility: visible; /* Changed from 'inherit' to 'visible' */
+}
+
+/* Adjust this if needed to ensure proper spacing */
+nav .navPart1 .catWrapper .sidebarNav ul {
+  margin: 0;
+  padding: 0;
+ 
+}
+
+
+nav .navPart1 .catWrapper .sidebarNav ul li {
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-bottom: 12px;
+  font-size: .8125rem;
+  list-style: none; /* Ensure no default list styles */
+  position: relative; /* Allow positioning for hover effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General styling for the sidebar and submenu */
+nav .navPart1 {
+  position: relative; /* Ensure sidebarNav is positioned relative to navPart1 */
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li {
+  position: relative; /* Ensure submenu is positioned relative to this li */
+  padding-right: 10px;
+}
+
+nav .navPart1 .catWrapper .sidebarNav .submenu {
+  display: none; /* Hide submenu by default */
+  position: absolute;
+  top: 10px; /* Align submenu to the top of its container */
+  left: 20px; /* Align submenu to the right side of its container */
+  width: 250px; /* Adjust width as needed */
+  background: #fff;
+  border: 1px solid #ddd; /* Border for visibility */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+  z-index: 100; /* Ensure it appears above other content */
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Show submenu on hover */
+nav .navPart1 .catWrapper .sidebarNav ul li:hover .submenu {
+  display: block;
+}
+
+/* Styling for the navPart2 submenu */
+.navPart2 {
+  position: relative; /* Ensure submenu is positioned relative to navPart2 */
+}
+
+.navPart2 .list-inline-item {
+  position: relative; /* Ensure submenu is positioned relative to this li */
+} 
+
+/* Show submenu on hover */
+.navPart2 .list-inline-item:hover .submenu {
+  display: block;
+}
+
+
+
+
+
+/* Remove fixed height from individual items */
+nav .navPart1 .catWrapper .sidebarNav ul li button {
+  display: block; /* Ensure button takes full width of parent li */
+  width: 100%; /* Full width for button */
+  color: #000;
+  border: none;
+  background: #fff;
+  text-align: left; /* Align text to the left */
+  padding: 0; /* Remove default padding to avoid extra space */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+nav .navPart1 .catWrapper .sidebarNav ul li:hover {
+  background: #f5f5f5; /* Background color on hover */
+  list-style: none;
+}
+
+/* Remove underline from Link components */
+nav .navPart1 .catWrapper .sidebarNav ul li a {
+  text-decoration: none; /* Remove underline from links */
+  display: block; /* Ensure full width */
+}
+
+/*  */
+nav .navPart1 .catWrapper .sidebarNav ul li:hover button {
+  background: #f5f5f5; /* Ensure button background matches hover effect */
+  color: #000; /* Text color on hover */
+  list-style: none;
+}
+
+/* Ensure no underline on buttons or links inside list items */
+.sidebarNav ul li button a {
+  text-decoration: none; /* Remove underline from links */
+}
+
+ .navPart1 .catWrapper .sidebarNav svg{
+  font-size: 25px;
+ }
 
 nav .allCatTab {
   background: #2bbef9;
@@ -185,9 +380,9 @@ nav .allCatTab svg{
   margin-bottom: 0px;
 }
 
-.navPart2 ul li a {
-  font-size: 16px; font-weight: 600; text-decoration: none; color: rgba(0,0,0,0.8); display: flex; align-items:center; padding: 10px 20px; transition: all 0.2s ease-in-out; border-radius: 30px;
-}
+  .navPart2 ul li a {
+    font-size: 16px; font-weight: 600; text-decoration: none; color: rgba(0,0,0,0.8); display: flex; align-items:center; padding: 10px 20px; transition: all 0.2s ease-in-out; border-radius: 30px;
+  }
 
 .navPart2 ul li a:hover {
 background: #f0faff;
@@ -232,7 +427,7 @@ color:#2bbef9 ;
   padding: 15px 20px;
 }
 
-.locationModal .countryList li button:hover {
+.locationModal .countryList li button:hover{
   background: #f3f4f7;
 }
 
@@ -270,4 +465,88 @@ color:#2bbef9 ;
 .list-inline-item button:hover{
   color:#007bff;
   
+}
+
+/* submnu */
+
+.navPart2 ul li  {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.navPart2 ul li .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #cad1d3;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+} 
+
+.navPart2 ul li .submenu a{
+ display: block;
+ width: 100%;
+}
+
+.navPart2 ul li .submenu a button{
+  display: flex;
+  justify-content:flex-start;
+  width: 100%;
+  border-radius: 0;
+  text-transform: capitalize;
+  font-weight: 600;
+ }
+ 
+ .navPart2 ul li:hover .submenu {
+  opacity: 1;
+  visibility: visible; /* Use 'visible' instead of 'inherit' */
+  top: 100%; /* Correct positioning */
+}
+
+.homeBannerSection {
+  outline: none;
+  z-index: 1;
+}
+
+/* homeproducts */
+
+.homeproducts {
+  padding: 25px 0px;
+  width: 100%;
+}
+
+.homeproducts .banner{
+  width: 100%;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.productRow .hd{
+  font-size: 25px;
+}
+
+.viewAllBtn {
+  padding: 8px 25px !important;
+  background: #fff;
+  border: 1px solid rgba(8, 8, 8, 0.1) !important;
+  border-radius: 30px !important;
+  color: #000 !important;
+  font-weight: 600;
+}
+
+.viewAllBtn svg {
+  font-size: 20px;
+}
+
+
+
+/* productItem ----------------*/
+
+.productItem{
+  width:100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }

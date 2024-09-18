@@ -15,14 +15,16 @@ function App() {
   const [countryList, setcountryList] = useState([]);
 
 useEffect(() => {
-  getCountry('https://countriesnow.space/api/v0.1/countires');
+  getCountry('https://countriesnow.space/api/v0.1/countries/'); // Corrected URL
 },[])
 
 
 async function getCountry(url) {
   try {
-    const response = await axios.get(url); // No need for .then here
-    console.log(response); // Log the response correctly
+    const response = await axios.get(url);
+    // Ensure countryList is an array
+    setcountryList(response.data?.data || []);
+    console.log(response.data); // Log the response correctly
   } catch (error) {
     console.error("Error fetching data:", error); // Handle any error
   }
@@ -30,16 +32,15 @@ async function getCountry(url) {
 
 
   const values= {
-
+    countryList 
   }
 
   return (
-    <MyContext.Provider value={value}>
+    <MyContext.Provider value={values}>
     <Router>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        
       </Routes>
     </Router>
     </MyContext.Provider>
