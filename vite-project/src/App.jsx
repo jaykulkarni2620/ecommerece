@@ -6,6 +6,7 @@ import Header from './components/Header/index';
 import { createContext, useState } from 'react';
 import axios from 'axios'; // Corrected import
 import { useEffect } from 'react';
+import ContactUs from './pages/Contactus/Contactus';
 
 
 const MyContext = createContext();
@@ -24,7 +25,7 @@ async function getCountry(url) {
     const response = await axios.get(url);
     // Ensure countryList is an array
     setcountryList(response.data?.data || []);
-    console.log(response.data); // Log the response correctly
+    // console.log(response.data); // Log the response correctly
   } catch (error) {
     console.error("Error fetching data:", error); // Handle any error
   }
@@ -41,6 +42,7 @@ async function getCountry(url) {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
     </Router>
     </MyContext.Provider>

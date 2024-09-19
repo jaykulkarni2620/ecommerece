@@ -134,7 +134,7 @@
                                 </Link>
                             </li>
                             <li className="list-inline-item">
-                                <Link to="/">
+                                <Link to="/contact">
                                 <button>CONTACT</button>
                                 </Link>
                             </li>
