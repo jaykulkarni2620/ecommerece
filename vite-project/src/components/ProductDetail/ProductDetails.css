@@ -1,0 +1,290 @@
+.full-page{
+  background-color: #F7F8FD;
+}
+
+.product-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+}
+
+.breadcrumb {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #073042;
+}
+
+.product-container {
+  display: flex;
+  gap: 100px;
+  background-color: #fff;
+  padding: 40px;
+}
+
+.product-images {
+  width: 30%;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.product-details {
+  width: 60%;
+}
+
+.product-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #073042;
+  margin-bottom: 10px;
+}
+
+.product-brand,
+.product-review,
+.sku {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.product-brand span {
+  font-weight: bold;
+}
+
+.price-section {
+  margin: 15px 0;
+  font-size: 20px;
+  color: #b94244;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 10px;
+}
+
+.new-price {
+  color: #cf5a27;
+}
+
+.discount {
+  background-color: #b94244;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.description {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.availability {
+  color: #28a745;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.quantity-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.quantity-btn {
+  background-color: #e6e7e7;
+  color: #000;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 120%;
+  padding: 7px 14px;
+}
+
+.add-to-cart {
+  background-color: #a3a3a3;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.extra-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.extra-info ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #666;
+}
+
+.shipping-info div {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #073042;
+}
+
+.social-share {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-share span {
+  font-size: 14px;
+  color: #666;
+}
+
+.social-share a {
+  color: #073042;
+  text-decoration: none;
+}
+
+.social-share a i {
+  font-size: 20px;
+}
+
+/* another container */
+
+/* Tabs styling */
+.product-details-section {
+  margin-top: 40px;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  padding: 15px 20px;
+  background-color: #fff;
+}
+
+.tab {
+  padding: 10px 20px; 
+  border: none;
+  color: rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: #fff;
+}
+
+.description-content {
+  background-color: #ffffff;
+  padding: 20px 35px;
+  border-top: 1px solid #ececec;
+  margin-bottom: 40px;
+}
+
+.description-content p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Related Products */
+.related-products-section {
+  margin-top: 40px;
+}
+
+.related-products-section h6 {
+  font-size: 17px;
+  margin-bottom: 20px;
+  color: #252323;
+  font-weight: 600;
+}
+
+.related-products {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.related-product {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  width: 22%;
+  border-radius: 8px;
+}
+
+.related-product img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.related-product h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.price-section {
+  margin-bottom: 10px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 16px;
+}
+
+.new-price {
+  color: #cf2727;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.discount {
+  background-color: #b94244;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.add-to-cart {
+  background-color:#4F61AA;
+  color: white;
+  padding: 10px 35px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+}

@@ -10,7 +10,8 @@ router.get('/', getProducts);
 // @route   GET /api/categorys
 router.get('/categorys', getCategorys);
 
-// @route   GET /api/products/:id
+
+// Fetch single product by ID
 router.get('/:id', getProductById);
 
 

@@ -592,11 +592,31 @@ color:#2bbef9 ;
 
 .productItem .info {
   padding: 15px;
+  text-align: center;
 }
 
-.productItem h4{
-  font-size:15px;
-  font-weight:600;
+.productItem button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  color: #000;
+  margin: 0px auto;
+}
+
+.productItem button:hover {
+  background-color: #233A95;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.productItem h4 {
+  font-size: 15px;
+  font-weight: 600;
+  max-height: 40px; /* Adjust as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
 }
 
 .productItem .info .oldPrice{

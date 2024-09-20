@@ -7,13 +7,17 @@ import { RiMobileDownloadLine } from "react-icons/ri";
 import Advertise from "/img/banner-box2.webp";
 import { FcAlarmClock } from "react-icons/fc";
 import { SlWallet } from "react-icons/sl";
+import { useNavigate } from 'react-router-dom';
+import OneProductInOnePage from "../OneProductInOnePage/OneProductInOnePage";  // If props are needed, pass them
 import axios from 'axios';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
+  // Fetch products from API
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -29,8 +33,14 @@ const Home = () => {
     fetchProducts();
   }, []);
 
+  // Loading and error handling
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
+
+  // Handle "View All" button click
+  const handleViewAll = () => {
+    navigate('/shop'); // Navigate to the products page
+  };
 
   return (
     <>
@@ -41,9 +51,9 @@ const Home = () => {
           <div className="row">
             <div className="col-md-3">
               <div className="banner d-flex flex-column">
-                <img src="https://klbtheme.com/bacola/wp-content/uploads/2021/04/banner-box.jpg" alt="err" className="cursor mb-5" />
+                <img src="https://klbtheme.com/bacola/wp-content/uploads/2021/04/banner-box.jpg" alt="Banner 1" className="cursor mb-5" />
                 <div className="banner_two">
-                  <img src="https://klbtheme.com/bacola/wp-content/uploads/2021/04/bacola-banner-04.jpg" alt="err" className="cursor mb-5" />
+                  <img src="https://klbtheme.com/bacola/wp-content/uploads/2021/04/bacola-banner-04.jpg" alt="Banner 2" className="cursor mb-5" />
                 </div>
                 <div className="iconboxes-widget mb-5">
                   <div className="item d-flex">
@@ -59,7 +69,7 @@ const Home = () => {
                       <span><FcAlarmClock /></span>
                     </div>
                     <div className="text p-2">
-                      <p>Download the Bacola App to your Phone.</p>
+                      <p>Don't miss our exclusive deals!</p>
                     </div>
                   </div>
                   <div className="item d-flex">
@@ -67,7 +77,7 @@ const Home = () => {
                       <span><SlWallet /></span>
                     </div>
                     <div className="text p-2">
-                      <p>Download the Bacola App to your Phone.</p>
+                      <p>Exclusive discounts available.</p>
                     </div>
                   </div>
                 </div>
@@ -79,8 +89,8 @@ const Home = () => {
                 <div className="info">
                   <h3 className="mb-0 hd">BEST SELLERS</h3>
                   <p className="text-color text-sml mb-0">Do not miss the current offers until the end of March.</p>
-                </div>  
-                <Button className="viewAllBtn ml-auto" >
+                </div>
+                <Button className="viewAllBtn ml-auto" onClick={handleViewAll}>
                   View All<IoIosArrowRoundForward />
                 </Button>
               </div>
@@ -89,12 +99,14 @@ const Home = () => {
               <div className="product_row w-100 mt-4 mb-4">
                 <SwipeSlider products={products} />
               </div>
+
+              {/* Banner content */}
               <div className="banner-wrapper">
                 <div className="banner-content d-flex">
                   <div className="text-container">
                     <h5 className="sub-text color-info-dark">
                       <p className="color-text-lighter">Always Taking Care</p>
-                      <span>In store or online your health &amp; safety is our top priority</span>    
+                      <span>In store or online your health &amp; safety is our top priority</span>
                     </h5>
                   </div>
                   <div className="adv">
@@ -107,7 +119,8 @@ const Home = () => {
               <div className="info">
                 <h3 className="mb-0 hd">HOT PRODUCT FOR <span className="text-danger">THIS WEEK</span></h3>
                 <p className="text-color text-sml mb-0">Don't miss this opportunity at a special discount just for this week.</p>
-              </div> 
+              </div>
+              <OneProductInOnePage />
             </div>
           </div>
         </div>
